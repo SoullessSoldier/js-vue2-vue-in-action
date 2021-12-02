@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Pet Depot</title>
+    <script src="../cdn/js/vue.js"></script>
+    <link rel="stylesheet" href="../cdn/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+            <p>Welcome to {{ sitename }}</p>
+        </header>
+    </div>
+    <script>
+        const APP_LOG_LIFECYCLE_EVENTS = true;
+        const webStore = new Vue({
+            el: '#app',
+            data: {
+                sitename: 'Vue.js Pet Depot'
+            },
+            beforeCreate: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('beforeCreate');
+            },
+            created: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('created');
+            },
+            beforeMount: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('beforeMount');
+            },
+            mounted: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('mounted');
+            },
+            beforeUpdate: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('beforeUpdate');
+            },
+            updated: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('updated');
+            },
+            beforeDestroy: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('beforeDestroy');
+            },
+            destroyed: function() {
+                if (APP_LOG_LIFECYCLE_EVENTS) console.log('destroyed');
+            },
+        });
+    </script>
+</body>
+</html>
