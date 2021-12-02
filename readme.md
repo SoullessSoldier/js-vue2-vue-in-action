@@ -4,7 +4,10 @@ https://github.com/ErikCH/VuejsInActionCode
 
 ## Vue 2 ##
 
-**0-calculator**\
+**1-calculator**\
 simple calculator
+
+**2-eshop-basic**\
+sceleton for eshop
 
 
