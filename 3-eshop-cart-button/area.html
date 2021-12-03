@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area calculator</title>
+    <script src="../cdn/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            Area is equal to: {{ area }}
+        </p>
+        <p>
+            <button class="btn" v-on:click="length++">Add length</button>
+            <button class="btn" v-on:click="width++">Add width</button>
+        </p>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                length: 3,
+                width: 5,
+            },
+            computed: {
+                area: function(){
+                    return this.length * this.width;
+                },
+            },
+            watch: {
+                length: function(newVal, oldVal){
+                    console.log(`Old value of length was ${oldVal}, new value is ${newVal}.`);
+                },
+                width: function(newVal, oldVal){
+                    console.log(`Old value of width was ${oldVal}, new value is ${newVal}.`);
+                },
+                area: function(newVal, oldVal){
+                    console.log(`Old value of area was ${oldVal}, new value is ${newVal}.`);
+                },                
+            },
+            beforeUpdate: function(){
+                    console.log('All those data changes happened before the output gets updated.')
+            }
+        });
+    </script>
+</body>
+</html>
