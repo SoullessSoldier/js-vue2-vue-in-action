@@ -16,4 +16,8 @@ work with "Add to cart" button, first look to v-show/v-if directives
 **4-eshop-data-bindings**\
 work with directives: v-model, v-bind, v-for, modificators "trim", "number", ".lazy"
 
+**5-eshop-v-for-directive**\
+work with cycles with v-for, display many products\
+work with computed, methods, function sort() 
+
 
