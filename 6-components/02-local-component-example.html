@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../cdn/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-cool-component></my-cool-component>
+        
+    </div>
+    <script>
+        const Component = {
+            template: '<div>Hello from Local Component!</div>'
+        };        
+        new Vue({
+            el:'#app',
+            components: {'myCoolComponent': Component}
+        });
+    </script>
+</body>
+</html>
