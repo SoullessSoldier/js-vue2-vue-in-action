@@ -19,6 +19,9 @@ work with directives: v-model, v-bind, v-for, modificators "trim", "number", ".l
 **5-eshop-v-for-directive**\
 work with cycles with v-for, display many products\
 work with computed, methods, function sort()\
-fetch data on app created 
+fetch data on app created
+
+**6-components**
+begin to work with components, props, etc
 
 
