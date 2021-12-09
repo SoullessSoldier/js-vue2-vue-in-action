@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props example with type validation</title>
+    <script src="../cdn/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component :num="myNumber" :str="passedString" :even="myNumber" :obj="passedObj"></my-component>
+    </div>
+    <script>
+        const MyComponent = {
+            template: '<div>Number: {{num}}<br/>String: {{str}}<br/>IsEven?: {{even}}<br/>Object: {{obj.message}}</div>',
+            props: {
+                num: {
+                    type: Number,
+                    required: true
+                },
+                str: {
+                    type: String,
+                    default: 'Hello world!'
+                },
+                obj: {
+                    type: Object,
+                    default: () => {
+                        return {message: 'Hello from object'}
+                    }
+                },
+                even: {
+                    validator: (value) => {
+                        return (value % 2 === 0)
+                    }
+                }
+            }
+        };
+        new Vue({
+            el: '#app',
+            components: {'my-component': MyComponent},
+            data(){
+                return {
+                    passedString: 'Hello from Parent!',
+                    myNumber: 43,
+                    passedObj: {message: 'Passed Object'}
+                }
+            }
+        })
+    </script>
+</body>
+</html>

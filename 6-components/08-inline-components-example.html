@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline component example</title>
+    <script src="../cdn/js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component :my-info="message" inline-template>
+            <div>
+                <p>
+                    inline template - {{myInfo}}
+                </p>
+            </div>
+        </my-component>
+    </div>
+    <script>
+        const MyComponent = {
+            props: ['myInfo']
+        }
+        new Vue({
+            el: '#app',
+            components: {'my-component': MyComponent},
+            data(){
+                return {
+                    message: 'Hello world!'
+                }
+            }
+        });
+    </script>
+</body>
+</html>
