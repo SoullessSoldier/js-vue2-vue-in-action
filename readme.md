@@ -21,7 +21,10 @@ work with cycles with v-for, display many products\
 work with computed, methods, function sort()\
 fetch data on app created
 
-**6-components**
+**6-components**\
 begin to work with components, props, etc
+
+**7-advanced-components-and-routing**
+Dive into advanced components, , then SFC, vue-cli, routing, etc... 
 
 
