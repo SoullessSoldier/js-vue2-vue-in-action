@@ -7,9 +7,13 @@
                 </h1>
             </div>
             <div class="navbar navbar-nav navbar-right cart ml-auto">
-                    <button class="btn btn-light btn-lg" v-on:click="showCheckout">
+                    <router-link 
+                        tag="button" 
+                        active-class="active" 
+                        :to="{name: 'Form'}" 
+                        class="btn btn-light btn-lg">
                         <span>{{ cartItemCount }} <i class="bi bi-cart"></i></span> Checkout
-                    </button>                    
+                    </router-link>                    
             </div>
         </div>
     </header>
@@ -34,5 +38,8 @@ export default {
 a {
     text-decoration: none;
     color: black;
+}
+.router-link-exact-active{
+    color:black;
 }
 </style>
