@@ -24,7 +24,10 @@ fetch data on app created
 **6-components**\
 begin to work with components, props, etc
 
-**7-advanced-components-and-routing**
-Dive into advanced components, , then SFC, vue-cli, routing, etc... 
+**7-advanced-components-and-routing**\
+Dive into advanced components, , then SFC, vue-cli, routing, etc...
+
+**8-transitions-and-animations**\
+Found how add transitions and some animations to Vue project
 
 
