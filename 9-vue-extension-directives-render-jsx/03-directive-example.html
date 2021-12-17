@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../cdn/css/bootstrap.min.css">
+    <script src="../cdn/js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-style-me>{{welcome}}</p>
+        <h2 v-style-me>header h2</h2>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data(){
+                return {
+                    welcome: 'Welcome to the board!'
+                }
+            },
+            directives: {
+                styleMe(el, binding, vnode, oldVnode){
+                    bind: {
+                        el.style.color = 'blue';
+                        el.style.fontSize = '42px';
+                        el.className = 'text-center';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../cdn/css/bootstrap.min.css">
+    <script src="../cdn/js/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-comp header="3">Erik</my-comp>
+    </div>
+    <script>
+        Vue.component('my-comp', {
+            render(createElement){
+                return createElement('h' + this.header, 
+                {
+                    'class': 'text-center',
+                    on: {
+                        click(e){
+                            alert('Clicked');
+                        }
+                    }
+                },
+                this.welcome + this.$slots.default[0].text)
+            },
+            data(){
+                return {
+                    welcome: 'Hello World '
+                }
+            },
+            props: ['header']
+        });
+        new Vue({
+            el: '#app',
+        });
+    </script>
+</body>
+</html>
