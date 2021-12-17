@@ -30,4 +30,9 @@ Dive into advanced components, , then SFC, vue-cli, routing, etc...
 **8-transitions-and-animations**\
 Found how add transitions and some animations to Vue project
 
+**9-mixins-directives-render_function-jsx**\
+Learn how to work with mixins, custmized directives, render function, jsx & babel
+
+
+
 
