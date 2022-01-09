@@ -51,11 +51,15 @@
 </template>
 <script>
 import MyHeader from './Header.vue';
+import {mapGetters} from 'vuex';
+import { productsRef } from '../firebase';
 export default {
     name: 'imain',
+    firebase: {
+        products: productsRef
+    },
     data(){
         return{
-            products: {},
             cart: []
         };
     },
@@ -107,6 +111,8 @@ export default {
                 return productsArray.sort(compare);
             }
         },
+        ...mapGetters(['session' , 'products']),
+        //...mapGetters(['products']),
     },
     filters: {
         formatPrice: function(price){
@@ -126,12 +132,14 @@ export default {
         }
     },
     created: function(){
-        axios.get('/static/products.json')
+        /*axios.get('/static/products.json')
             .then(response => {
                 this.products = response.data.products;
                 //console.log('this.products: ', this.products);
 
-            })
+            })*/
+        this.$store.dispatch('initStore');
+        //console.log(this.productsRef);
     },
     
 }
